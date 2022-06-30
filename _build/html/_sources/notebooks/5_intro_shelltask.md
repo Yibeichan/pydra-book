@@ -184,13 +184,15 @@ with pydra.Submitter(plugin="cf") as sub:
 shelly.result()
 ```
 
-+++ {"solution2": "hidden", "solution2_first": true}
++++ 
 
 ### Exercise 1
 
 Write a task that creates two new files, use provided output spec.
 
 ```{code-cell} ipython3
+:tags: ["hide-cell"]
+
 cmd = "touch"
 args = ["newfile_1.txt", "newfile_2.txt"]
 
@@ -211,7 +213,6 @@ my_output_spec = pydra.specs.SpecInfo(
     bases=(pydra.specs.ShellOutSpec,),
 )
 
-# write your solution here
 ```
 
 <mark> DO NOT RUN IF Docker IS NOT AVAILABLE </mark>
@@ -236,15 +237,15 @@ with pydra.Submitter() as sub:
 docky.result()
 ```
 
-+++ {"solution2": "shown", "solution2_first": true}
++++ 
 
 ### Exercise2
 
 Use splitter to run the same command in two different images:
 
 ```{code-cell} ipython3
-:solution2: shown
-:tags: [raises-exception]
+:tags: ["hide-cell",
+    "raises-exception"]
 
 cmd = "whoami"
 docky = pydra.DockerTask(name="docky", executable=cmd, image=["busybox", "ubuntu"]).split("image")

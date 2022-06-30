@@ -26,7 +26,7 @@ import nest_asyncio
 nest_asyncio.apply()
 ```
 
-+++ {"tags": []}
++++ 
 
 ## Preparation
 
@@ -51,7 +51,7 @@ workflow_out_dir = workflow_dir / "6_glm"
 os.makedirs(workflow_out_dir, exist_ok = True) 
 ```
 
-+++ {"tags": []}
++++ 
 
 ## Create tasks
 
@@ -349,7 +349,7 @@ wf_firstlevel.set_output([
 ])
 ```
 
-+++ {"tags": []}
++++ 
 
 ## The overaching workflow
 
@@ -403,7 +403,7 @@ wf.set_output([
 ## Run Workflow Run
 
 ```{code-cell} ipython3
-:tags: []
+:tags: ["hide-output"]
 
 from pydra import Submitter
 
@@ -415,7 +415,7 @@ results = wf.result()
 print(results)
 ```
 
-+++ {"tags": []}
++++
 
 ## Visualization
 

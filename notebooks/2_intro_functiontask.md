@@ -265,13 +265,14 @@ task4b.output_dir
 
 This is because, the checksum changes when we change either input or function.
 
-+++ {"solution2": "hidden", "solution2_first": true}
++++ 
 
 ### Exercise 1
 Create a task that take a list of numbers as an input and returns two fields: `mean` with the mean value and `std` with the standard deviation value.
 
 ```{code-cell} ipython3
-:solution2: hidden
+
+:tags: ["hide-cell"]
 
 @pydra.mark.task
 @pydra.mark.annotate({"return": {"mean": ty.Any, "std": ty.Any}})

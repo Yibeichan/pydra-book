@@ -304,6 +304,8 @@ task4b.output_dir
 # In[29]:
 
 
+:tags: ["hide-cell"]
+
 @pydra.mark.task
 @pydra.mark.annotate({"return": {"mean": ty.Any, "std": ty.Any}})
 def mean_dev(my_list):
@@ -315,7 +317,7 @@ my_task()
 my_task.result()
 
 
-# In[30]:
+# In[ ]:
 
 
 # write your solution here (you can use statistics module)
@@ -327,7 +329,7 @@ my_task.result()
 # 
 # `AuditFlag.RESOURCE` allows you to monitor resource usage for the `Task`, while `AuditFlag.PROV` tracks the provenance of the `Task`.
 
-# In[31]:
+# In[ ]:
 
 
 from pydra.utils.messenger import AuditFlag, PrintMessenger
@@ -339,7 +341,7 @@ task5.result()
 
 # One can turn on both audit flags using `AuditFlag.ALL`, and print the messages on the terminal using the `PrintMessenger`.
 
-# In[32]:
+# In[ ]:
 
 
 task5 = add_var(a=4, b=5, audit_flags=AuditFlag.ALL, messengers=PrintMessenger())

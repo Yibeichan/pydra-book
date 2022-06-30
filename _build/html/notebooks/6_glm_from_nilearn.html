@@ -51,7 +51,7 @@
     <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="5. ShellCommandTask" href="5_intro_shelltask.html" />
+    <link rel="prev" title="&lt;no title&gt;" href="5_intro_shelltask.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -109,11 +109,6 @@
  <li class="toctree-l1">
   <a class="reference internal" href="3_intro_functiontask_state.html">
    3. Tasks with States
-  </a>
- </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="5_intro_shelltask.html">
-   5. ShellCommandTask
   </a>
  </li>
  <li class="toctree-l1 current active">
@@ -870,7 +865,7 @@ Then, for this model, we will obtain</p>
 </div>
 <div class="section" id="run-workflow-run">
 <h2>Run Workflow Run<a class="headerlink" href="#run-workflow-run" title="Permalink to this headline">¶</a></h2>
-<div class="cell docutils container">
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pydra</span> <span class="kn">import</span> <span class="n">Submitter</span>
 
@@ -970,15 +965,12 @@ Then, for this model, we will obtain</p>
     return self._semlock.__enter__()
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/Users/yibeichen/miniconda3/envs/pydra/lib/python3.7/multiprocessing/synchronize.py&quot;, line 95, in __enter__
-    return self._semlock.__enter__()
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/Users/yibeichen/miniconda3/envs/pydra/lib/python3.7/multiprocessing/connection.py&quot;, line 216, in recv_bytes
     buf = self._recv_bytes(maxlength)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KeyboardInterrupt
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/Users/yibeichen/miniconda3/envs/pydra/lib/python3.7/multiprocessing/synchronize.py&quot;, line 95, in __enter__
+    return self._semlock.__enter__()
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KeyboardInterrupt
@@ -986,6 +978,9 @@ Then, for this model, we will obtain</p>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/Users/yibeichen/miniconda3/envs/pydra/lib/python3.7/multiprocessing/connection.py&quot;, line 407, in _recv_bytes
     buf = self._recv(4)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KeyboardInterrupt
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/Users/yibeichen/miniconda3/envs/pydra/lib/python3.7/multiprocessing/connection.py&quot;, line 379, in _recv
@@ -997,7 +992,7 @@ Then, for this model, we will obtain</p>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">wr</span><span class="o">/</span><span class="n">x5xt_yqs2cvc_gb3sf147lvc0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_59687</span><span class="o">/</span><span class="mf">1775606206.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">wr</span><span class="o">/</span><span class="n">x5xt_yqs2cvc_gb3sf147lvc0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_61272</span><span class="o">/</span><span class="mf">1775606206.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> 
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">with</span> <span class="n">Submitter</span><span class="p">(</span><span class="n">plugin</span><span class="o">=</span><span class="s2">&quot;cf&quot;</span><span class="p">,</span> <span class="n">n_procs</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="k">as</span> <span class="n">submitter</span><span class="p">:</span>
 <span class="ne">----&gt; </span><span class="mi">4</span>     <span class="n">submitter</span><span class="p">(</span><span class="n">wf</span><span class="p">)</span>
@@ -1144,7 +1139,7 @@ Then, for this model, we will obtain</p>
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">5. ShellCommandTask</p>
+            <p class="prev-next-title">&lt;no title&gt;</p>
         </div>
     </a>
 </div>
