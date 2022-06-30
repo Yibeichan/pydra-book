@@ -1,0 +1,16 @@
+pydra
+Jinja2<3.1.0
+jupyter
+jupyter-book
+jupyter_contrib_nbextensions
+matplotlib
+nbformat
+nbval
+nest_asyncio
+nibabel
+nilearn
+numpy
+psutil
+pytest
+pandas
+scipy
