@@ -92,7 +92,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Welcome to Pydra tutorial
+   Welcome
   </a>
  </li>
 </ul>
@@ -378,7 +378,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pydra.engine.task.FunctionTask at 0x7fac30042fd0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pydra.engine.task.FunctionTask at 0x7ff4e8382190&gt;
 </pre></div>
 </div>
 </div>
@@ -391,7 +391,7 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pydra.engine.state.State at 0x7fac507e0610&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;pydra.engine.state.State at 0x7ff5186bdad0&gt;
 </pre></div>
 </div>
 </div>
@@ -567,7 +567,7 @@
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">Exception</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">wr</span><span class="o">/</span><span class="n">x5xt_yqs2cvc_gb3sf147lvc0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_53476</span><span class="o">/</span><span class="mf">2635338667.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">wr</span><span class="o">/</span><span class="n">x5xt_yqs2cvc_gb3sf147lvc0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_59142</span><span class="o">/</span><span class="mf">2635338667.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">task4</span><span class="o">.</span><span class="n">split</span><span class="p">((</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">))</span>
 
 <span class="nn">~/GDrive/GitHub/pydra/pydra/engine/core.py</span> in <span class="ni">split</span><span class="nt">(self, splitter, overwrite, cont_dim, **kwargs)</span>
@@ -744,7 +744,7 @@
 <h2>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">¶</a></h2>
 <p>Let’s say we want to calculate squares and cubes of integers from 2 to 5, and combine separately all squares and all cubes:</p>
 <p>First we will define a function that returns powers:</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nd">@pydra</span><span class="o">.</span><span class="n">mark</span><span class="o">.</span><span class="n">task</span>
 <span class="k">def</span> <span class="nf">power</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">n</span><span class="p">):</span>
@@ -754,7 +754,7 @@
 </div>
 </div>
 <p>Now we can create a task that takes two lists as its input, outer splitter for <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">n</span></code>, and combine all <code class="docutils literal notranslate"><span class="pre">x</span></code>:</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">task_ex1</span> <span class="o">=</span> <span class="n">power</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">],</span> <span class="n">n</span><span class="o">=</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span><span class="o">.</span><span class="n">split</span><span class="p">([</span><span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;n&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">combine</span><span class="p">(</span><span class="s2">&quot;x&quot;</span><span class="p">)</span>
 <span class="n">task_ex1</span><span class="p">()</span>
@@ -776,7 +776,7 @@
 </div>
 </div>
 <p>The result should contain two list, the first one is for squares, the second for cubes.</p>
-<div class="cell docutils container">
+<div class="cell tag_hide-cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">squares_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">el</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">out</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">task_ex1</span><span class="o">.</span><span class="n">result</span><span class="p">()[</span><span class="mi">0</span><span class="p">]]</span>
 <span class="n">cubes_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">el</span><span class="o">.</span><span class="n">output</span><span class="o">.</span><span class="n">out</span> <span class="k">for</span> <span class="n">el</span> <span class="ow">in</span> <span class="n">task_ex1</span><span class="o">.</span><span class="n">result</span><span class="p">()[</span><span class="mi">1</span><span class="p">]]</span>
@@ -814,7 +814,7 @@ cubes: [8, 27, 64, 125]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total time: 1.3383948802947998
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total time: 1.3466429710388184
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Result(output=Output(out=3), runtime=None, errored=False),
@@ -841,7 +841,7 @@ cubes: [8, 27, 64, 125]
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total time: 1.3334400653839111
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total time: 1.351557731628418
 results: [Result(output=Output(out=3), runtime=None, errored=False), Result(output=Output(out=4), runtime=None, errored=False), Result(output=Output(out=5), runtime=None, errored=False), Result(output=Output(out=6), runtime=None, errored=False)]
 </pre></div>
 </div>
@@ -860,7 +860,7 @@ results: [Result(output=Output(out=3), runtime=None, errored=False), Result(outp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total time: 1.3524560928344727
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total time: 1.3515949249267578
 results: [Result(output=Output(out=3), runtime=None, errored=False), Result(output=Output(out=4), runtime=None, errored=False), Result(output=Output(out=5), runtime=None, errored=False), Result(output=Output(out=6), runtime=None, errored=False)]
 </pre></div>
 </div>
@@ -880,7 +880,7 @@ results: [Result(output=Output(out=3), runtime=None, errored=False), Result(outp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total time: 1.3220229148864746
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total time: 1.400918960571289
 results: [Result(output=Output(out=3), runtime=None, errored=False), Result(output=Output(out=4), runtime=None, errored=False), Result(output=Output(out=5), runtime=None, errored=False), Result(output=Output(out=6), runtime=None, errored=False)]
 </pre></div>
 </div>
@@ -900,7 +900,7 @@ results: [Result(output=Output(out=3), runtime=None, errored=False), Result(outp
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total time: 2.4080920219421387
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>total time: 2.4123289585113525
 results: [Result(output=Output(out=3), runtime=None, errored=False), Result(output=Output(out=4), runtime=None, errored=False), Result(output=Output(out=5), runtime=None, errored=False), Result(output=Output(out=6), runtime=None, errored=False)]
 </pre></div>
 </div>

@@ -6,7 +6,7 @@ jupytext:
     format_version: 0.13
     jupytext_version: 1.10.3
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
@@ -102,7 +102,7 @@ Then, for this model, we will obtain
 2. events
 3. confound regressors 
 
-Those are inferred from the confounds.tsv files available in the BIDS dataset. 
+Those are inferred from the confounds.tsv files available in the BIDS dataset.
 
 ```{code-cell} ipython3
 @pydra.mark.task
@@ -132,7 +132,7 @@ This task does the following:
 2. rename the column
 3. save the new design matrix as `.csv`
 
-**Think:** What if we don't save the new design matrix, but `return` it directly? In other words, we `return` a `pandas.DataFrame` instead of a `path`. What will happen? Worth a try :) 
+**Think:** What if we don't save the new design matrix, but `return` it directly? In other words, we `return` a `pandas.DataFrame` instead of a `path`. What will happen? Worth a try :)
 
 ```{code-cell} ipython3
 @pydra.mark.task
@@ -187,7 +187,6 @@ def model_fit(
 For publication purposes, we obtain a cluster table and a summary report.
 
 ```{code-cell} ipython3
-
 @pydra.mark.task
 @pydra.mark.annotate({"z_map_path":str,
                     "return":{"output_file":str}})
@@ -356,7 +355,7 @@ wf_firstlevel.set_output([
 
 Connect other tasks and the above workflow into one
 
-Now we need to create the overaching glm workflow that connects the above workflow and other tasks (e.g., `get/read the data` and `plot the result`) 
+Now we need to create the overaching glm workflow that connects the above workflow and other tasks (e.g., `get/read the data` and `plot the result`)
 
 ```{code-cell} ipython3
 wf = Workflow(name = "firstlevel_glm",
@@ -411,7 +410,7 @@ from pydra import Submitter
 with Submitter(plugin="cf", n_procs=4) as submitter:
     submitter(wf)
 
-results = wf.result(return_inputs=True)
+results = wf.result()
 
 print(results)
 ```

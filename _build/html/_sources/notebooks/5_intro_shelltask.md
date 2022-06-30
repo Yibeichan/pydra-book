@@ -6,13 +6,12 @@ jupytext:
     format_version: 0.13
     jupytext_version: 1.10.3
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
 
 # 5. ShellCommandTask
-
 
 ```{code-cell} ipython3
 ---
@@ -126,7 +125,6 @@ In `metadata`, you can provide additional information that is used by `pydra`, `
 - `mandatory`: a bool, if True, pydra will raise an exception, if the argument is not provided;
 
 The complete documentations for all suported keys is available [here](https://pydra.readthedocs.io/en/latest/input_spec.html).
- 
 
 +++
 

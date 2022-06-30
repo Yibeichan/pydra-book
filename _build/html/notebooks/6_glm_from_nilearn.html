@@ -91,7 +91,7 @@
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="../intro.html">
-   Welcome to Pydra tutorial
+   Welcome
   </a>
  </li>
 </ul>
@@ -877,7 +877,7 @@ Then, for this model, we will obtain</p>
 <span class="k">with</span> <span class="n">Submitter</span><span class="p">(</span><span class="n">plugin</span><span class="o">=</span><span class="s2">&quot;cf&quot;</span><span class="p">,</span> <span class="n">n_procs</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="k">as</span> <span class="n">submitter</span><span class="p">:</span>
     <span class="n">submitter</span><span class="p">(</span><span class="n">wf</span><span class="p">)</span>
 
-<span class="n">results</span> <span class="o">=</span> <span class="n">wf</span><span class="o">.</span><span class="n">result</span><span class="p">(</span><span class="n">return_inputs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">wf</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
 </pre></div>
@@ -926,36 +926,36 @@ Then, for this model, we will obtain</p>
     self.run()
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/Users/yibeichen/miniconda3/envs/pydra/lib/python3.7/multiprocessing/process.py&quot;, line 99, in run
-    self._target(*self._args, **self._kwargs)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/Users/yibeichen/miniconda3/envs/pydra/lib/python3.7/multiprocessing/process.py&quot;, line 99, in run
-    self._target(*self._args, **self._kwargs)
-</pre></div>
-</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/Users/yibeichen/miniconda3/envs/pydra/lib/python3.7/multiprocessing/process.py&quot;, line 297, in _bootstrap
     self.run()
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/Users/yibeichen/miniconda3/envs/pydra/lib/python3.7/concurrent/futures/process.py&quot;, line 233, in _process_worker
-    call_item = call_queue.get(block=True)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/Users/yibeichen/miniconda3/envs/pydra/lib/python3.7/concurrent/futures/process.py&quot;, line 233, in _process_worker
-    call_item = call_queue.get(block=True)
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/Users/yibeichen/miniconda3/envs/pydra/lib/python3.7/multiprocessing/process.py&quot;, line 99, in run
+    self._target(*self._args, **self._kwargs)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/Users/yibeichen/miniconda3/envs/pydra/lib/python3.7/multiprocessing/process.py&quot;, line 99, in run
     self._target(*self._args, **self._kwargs)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/Users/yibeichen/miniconda3/envs/pydra/lib/python3.7/multiprocessing/queues.py&quot;, line 93, in get
-    with self._rlock:
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/Users/yibeichen/miniconda3/envs/pydra/lib/python3.7/multiprocessing/process.py&quot;, line 99, in run
+    self._target(*self._args, **self._kwargs)
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/Users/yibeichen/miniconda3/envs/pydra/lib/python3.7/concurrent/futures/process.py&quot;, line 233, in _process_worker
     call_item = call_queue.get(block=True)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/Users/yibeichen/miniconda3/envs/pydra/lib/python3.7/concurrent/futures/process.py&quot;, line 233, in _process_worker
+    call_item = call_queue.get(block=True)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/Users/yibeichen/miniconda3/envs/pydra/lib/python3.7/concurrent/futures/process.py&quot;, line 233, in _process_worker
+    call_item = call_queue.get(block=True)
+</pre></div>
+</div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/Users/yibeichen/miniconda3/envs/pydra/lib/python3.7/multiprocessing/queues.py&quot;, line 93, in get
+    with self._rlock:
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/Users/yibeichen/miniconda3/envs/pydra/lib/python3.7/multiprocessing/queues.py&quot;, line 93, in get
@@ -997,12 +997,12 @@ Then, for this model, we will obtain</p>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">wr</span><span class="o">/</span><span class="n">x5xt_yqs2cvc_gb3sf147lvc0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_54024</span><span class="o">/</span><span class="mf">1691888031.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">wr</span><span class="o">/</span><span class="n">x5xt_yqs2cvc_gb3sf147lvc0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_59687</span><span class="o">/</span><span class="mf">1775606206.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> 
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">with</span> <span class="n">Submitter</span><span class="p">(</span><span class="n">plugin</span><span class="o">=</span><span class="s2">&quot;cf&quot;</span><span class="p">,</span> <span class="n">n_procs</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="k">as</span> <span class="n">submitter</span><span class="p">:</span>
 <span class="ne">----&gt; </span><span class="mi">4</span>     <span class="n">submitter</span><span class="p">(</span><span class="n">wf</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> 
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">results</span> <span class="o">=</span> <span class="n">wf</span><span class="o">.</span><span class="n">result</span><span class="p">(</span><span class="n">return_inputs</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">results</span> <span class="o">=</span> <span class="n">wf</span><span class="o">.</span><span class="n">result</span><span class="p">()</span>
 
 <span class="nn">~/GDrive/GitHub/pydra/pydra/engine/submitter.py</span> in <span class="ni">__call__</span><span class="nt">(self, runnable, cache_locations, rerun)</span>
 <span class="g g-Whitespace">     </span><span class="mi">39</span>         <span class="k">if</span> <span class="n">cache_locations</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>

@@ -6,7 +6,7 @@ jupytext:
     format_version: 0.13
     jupytext_version: 1.10.3
 kernelspec:
-  display_name: Python 3
+  display_name: Python 3 (ipykernel)
   language: python
   name: python3
 ---
@@ -64,7 +64,7 @@ And we can print information about the state:
 print(task1.state)
 ```
 
-within the `state` information about the splitter has been stored: 
+within the `state` information about the splitter has been stored:
 
 ```{code-cell} ipython3
 task1.state.splitter
@@ -117,7 +117,7 @@ task2()
 task2.result()
 ```
 
-Now we have three results for each element from the `a` list and the value of `b` is always the same. 
+Now we have three results for each element from the `a` list and the value of `b` is always the same.
 
 +++
 
@@ -300,6 +300,7 @@ First we will define a function that returns powers:
 
 ```{code-cell} ipython3
 :solution2: hidden
+:tags: [hide-cell]
 
 @pydra.mark.task
 def power(x, n):
@@ -308,10 +309,11 @@ def power(x, n):
 
 +++ {"solution2": "hidden"}
 
-Now we can create a task that takes two lists as its input, outer splitter for `x` and `n`, and combine all `x`: 
+Now we can create a task that takes two lists as its input, outer splitter for `x` and `n`, and combine all `x`:
 
 ```{code-cell} ipython3
 :solution2: hidden
+:tags: [hide-cell]
 
 task_ex1 = power(x=[2, 3, 4, 5], n=[2, 3]).split(["x", "n"]).combine("x")
 task_ex1()
@@ -324,6 +326,7 @@ The result should contain two list, the first one is for squares, the second for
 
 ```{code-cell} ipython3
 :solution2: hidden
+:tags: [hide-cell]
 
 squares_list = [el.output.out for el in task_ex1.result()[0]]
 cubes_list = [el.output.out for el in task_ex1.result()[1]]

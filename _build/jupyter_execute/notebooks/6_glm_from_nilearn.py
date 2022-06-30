@@ -405,7 +405,7 @@ from pydra import Submitter
 with Submitter(plugin="cf", n_procs=4) as submitter:
     submitter(wf)
 
-results = wf.result(return_inputs=True)
+results = wf.result()
 
 print(results)
 
