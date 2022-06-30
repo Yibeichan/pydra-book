@@ -209,8 +209,6 @@ my_output_spec = pydra.specs.SpecInfo(
     bases=(pydra.specs.ShellOutSpec,),
 )
 
-# write your solution here
-
 
 # <mark> DO NOT RUN IF Docker IS NOT AVAILABLE </mark>
 # 

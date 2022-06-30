@@ -30,7 +30,7 @@ my_task()
 my_task.result()
 ------------------
 
-[0;36m  File [0;32m"/var/folders/wr/x5xt_yqs2cvc_gb3sf147lvc0000gn/T/ipykernel_61016/1567334023.py"[0;36m, line [0;32m1[0m
+[0;36m  File [0;32m"/var/folders/wr/x5xt_yqs2cvc_gb3sf147lvc0000gn/T/ipykernel_70990/1567334023.py"[0;36m, line [0;32m1[0m
 [0;31m    :tags: ["hide-cell"][0m
 [0m    ^[0m
 [0;31mSyntaxError[0m[0;31m:[0m invalid syntax

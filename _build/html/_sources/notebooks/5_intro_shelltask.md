@@ -244,8 +244,7 @@ docky.result()
 Use splitter to run the same command in two different images:
 
 ```{code-cell} ipython3
-:tags: ["hide-cell",
-    "raises-exception"]
+:tags: ["hide-cell", "raises-exception"]
 
 cmd = "whoami"
 docky = pydra.DockerTask(name="docky", executable=cmd, image=["busybox", "ubuntu"]).split("image")

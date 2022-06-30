@@ -1,0 +1,139 @@
+import nest_asyncio
+nest_asyncio.apply()
+
+import pydra
+
+@pydra.mark.task
+def add_var(a, b):
+    return a + b
+
+task1 = add_var(a=4, b=5)
+
+type(task1)
+
+print(f"a = {task1.inputs.a}")
+print(f"b = {task1.inputs.b}")
+
+task1.inputs
+
+task1()
+
+task1.result()
+
+result = task1.result()
+result.output.out
+
+task1.result(return_inputs=True)
+
+import typing as ty
+
+@pydra.mark.task
+def add_var_an(a, b) -> {"sum_a_b": int}:
+    return a + b
+
+
+task1a = add_var_an(a=4, b=5)
+task1a()
+
+@pydra.mark.task
+def modf_an(a) -> {"fractional": ty.Any, "integer": ty.Any}:
+    import math
+    return math.modf(a)
+
+task2 = modf_an(a=3.5)
+task2()
+
+@pydra.mark.task
+@pydra.mark.annotate({"return": {"fractional": ty.Any, "integer": ty.Any}})
+def modf(a):
+    import math
+    return math.modf(a)
+
+task2a = modf(a=3.5)
+task2a()
+
+task3 = add_var()
+task3.inputs.a = 4
+task3.inputs.b = 5
+task3()
+
+task3a = add_var()
+task3a.inputs.a = 4
+
+# importing attr library, and checking the type pf `b`
+import attr
+task3a.inputs.b == attr.NOTHING
+
+task3a()
+
+task3.output_dir
+
+import os
+os.listdir(task3.output_dir)
+
+from tempfile import mkdtemp
+from pathlib import Path
+cache_dir_tmp = Path(mkdtemp()) / "task4"
+print(cache_dir_tmp)
+
+@pydra.mark.task
+def add_var_wait(a, b):
+    import time
+    time.sleep(5)
+    return a + b
+
+task4 = add_var_wait(a=4, b=6, cache_dir=cache_dir_tmp)
+
+task4()
+task4.result()
+
+task4.output_dir
+
+task4a = add_var_wait(a=4, b=6, cache_dir=cache_dir_tmp)
+task4a()
+
+cache_dir_tmp_new = Path(mkdtemp()) / "task4b"
+
+task4b = add_var_wait(a=4, b=6, cache_dir=cache_dir_tmp_new, cache_locations=[cache_dir_tmp])
+task4b()
+
+task4b.output_dir.exists()
+
+cache_dir_tmp_new = Path(mkdtemp()) / "task4c"
+
+task4c = add_var_wait(a=4, b=6, cache_dir=cache_dir_tmp_new, cache_locations=[cache_dir_tmp])
+task4c(rerun=True)
+
+task4c.output_dir.exists()
+
+task4b.inputs.a = 1
+print(task4b())
+print(task4b.output_dir.exists())
+
+task4b.output_dir
+
+:tags: ["hide-cell"]
+
+@pydra.mark.task
+@pydra.mark.annotate({"return": {"mean": ty.Any, "std": ty.Any}})
+def mean_dev(my_list):
+    import statistics as st
+    return st.mean(my_list), st.stdev(my_list)
+
+my_task = mean_dev(my_list=[2, 2, 2])
+my_task()
+my_task.result()
+
+# write your solution here (you can use statistics module)
+
+from pydra.utils.messenger import AuditFlag, PrintMessenger
+
+task5 = add_var(a=4, b=5, audit_flags=AuditFlag.RESOURCE)
+task5()
+task5.result()
+
+task5 = add_var(a=4, b=5, audit_flags=AuditFlag.ALL, messengers=PrintMessenger())
+task5()
+task5.result()
+
+
