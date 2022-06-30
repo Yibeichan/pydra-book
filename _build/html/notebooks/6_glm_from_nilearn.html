@@ -111,6 +111,11 @@
    3. Tasks with States
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="4_intro_workflow.html">
+   4. Workflow
+  </a>
+ </li>
  <li class="toctree-l1 current active">
   <a class="current reference internal" href="#">
    6. First level GLM
@@ -965,12 +970,15 @@ Then, for this model, we will obtain</p>
     return self._semlock.__enter__()
 </pre></div>
 </div>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/Users/yibeichen/miniconda3/envs/pydra/lib/python3.7/multiprocessing/synchronize.py&quot;, line 95, in __enter__
+    return self._semlock.__enter__()
+</pre></div>
+</div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/Users/yibeichen/miniconda3/envs/pydra/lib/python3.7/multiprocessing/connection.py&quot;, line 216, in recv_bytes
     buf = self._recv_bytes(maxlength)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/Users/yibeichen/miniconda3/envs/pydra/lib/python3.7/multiprocessing/synchronize.py&quot;, line 95, in __enter__
-    return self._semlock.__enter__()
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KeyboardInterrupt
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KeyboardInterrupt
@@ -978,9 +986,6 @@ Then, for this model, we will obtain</p>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/Users/yibeichen/miniconda3/envs/pydra/lib/python3.7/multiprocessing/connection.py&quot;, line 407, in _recv_bytes
     buf = self._recv(4)
-</pre></div>
-</div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KeyboardInterrupt
 </pre></div>
 </div>
 <div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  File &quot;/Users/yibeichen/miniconda3/envs/pydra/lib/python3.7/multiprocessing/connection.py&quot;, line 379, in _recv
@@ -992,7 +997,7 @@ Then, for this model, we will obtain</p>
 </div>
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">KeyboardInterrupt</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
-<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">wr</span><span class="o">/</span><span class="n">x5xt_yqs2cvc_gb3sf147lvc0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_61272</span><span class="o">/</span><span class="mf">1775606206.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="o">/</span><span class="n">var</span><span class="o">/</span><span class="n">folders</span><span class="o">/</span><span class="n">wr</span><span class="o">/</span><span class="n">x5xt_yqs2cvc_gb3sf147lvc0000gn</span><span class="o">/</span><span class="n">T</span><span class="o">/</span><span class="n">ipykernel_62391</span><span class="o">/</span><span class="mf">1775606206.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> 
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">with</span> <span class="n">Submitter</span><span class="p">(</span><span class="n">plugin</span><span class="o">=</span><span class="s2">&quot;cf&quot;</span><span class="p">,</span> <span class="n">n_procs</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span> <span class="k">as</span> <span class="n">submitter</span><span class="p">:</span>
 <span class="ne">----&gt; </span><span class="mi">4</span>     <span class="n">submitter</span><span class="p">(</span><span class="n">wf</span><span class="p">)</span>

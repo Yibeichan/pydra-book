@@ -11,7 +11,7 @@ kernelspec:
   name: python3
 ---
 
-+++ {"tags": []}
++++ 
 
 # 6. First level GLM
 
